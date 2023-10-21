@@ -1,0 +1,58 @@
+{
+  "name": "Impulse",
+  "kind": "Hero",
+  "initialCardIdentifiers": [
+    "ImpulseCharacter"
+  ],
+  "cards": [
+    {
+      "identifier": "ImpulseCharacter",
+      "count": 1,
+      "title": "Impulse",
+      "body": "What is body?",
+      "backgroundColor": "fbf8f9",
+      "foilBackgroundColor": "FEFEFE",
+      "hitpointsColor": "C94742",
+      "character": true,
+      "powers": [
+        "Draw 2 cards."
+      ],
+      "icons": [
+        "HasPower",
+        "DrawCardNow"
+      ],
+      "hitpoints": 30,
+      "nemesisIdentifiers": [
+        "Workshopping.Impulse"
+      ],
+      "incapacitatedAbilities": [
+        "One player may play a card.",
+        "One hero may use a power.",
+        "One player may draw a card."
+      ],
+      "flippedIcons": [
+        "PlayCardNow",
+        "UsePowerNow",
+        "DrawCardNow"
+      ],
+      "openingLines": {
+      },
+      "complexity": 1,
+      "setup": [ "This is the setup text for Impulse." ],
+      "gameplay": [ "This is the gameplay text for Impulse." ]
+    },
+    {
+      "identifier": "Impulse Card 1",
+      "count": 10,
+      "title": "Impulse Card 1",
+      "keywords": [
+        "one-shot"
+      ],
+      "body": "Nothing happens.",
+      "icons": [
+      ]
+    }
+  ],
+  "promoCards": [
+  ]
+}
