@@ -48,7 +48,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Impulse\ImpulseCard1CardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDReverbDistortionCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDSerratedVinylSlashCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDRecordScratchCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDBreakdownCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDDowntempoShiftCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDAccousticDeadzoneCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDPhaseModulatorCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDTripleDeckTurntableCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDSuperMaxHiFiCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDSonicSootheCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDDancefloorDirgeCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDLimbicOverdriveCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDBuldUptotheDropCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDDLightSmokeAndMirrorsCardController.cs" />
+    <Compile Include="Impulse\Cards\SFDD200BeatdownsPerMinuteCardController.cs" />
     <Compile Include="Impulse\ImpulseCharacterCardController.cs" />
     <Compile Include="Impulse\SFDDImpulseTurnTakerController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
