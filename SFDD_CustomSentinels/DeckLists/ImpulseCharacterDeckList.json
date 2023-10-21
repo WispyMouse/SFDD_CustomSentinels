@@ -23,7 +23,7 @@
       ],
       "hitpoints": 30,
       "nemesisIdentifiers": [
-        "Workshopping.Impulse"
+        "SFDD_CustomSentinels.ImpulseCharacter"
       ],
       "incapacitatedAbilities": [
         "One player may play a card.",
@@ -42,7 +42,7 @@
       "gameplay": [ "This is the gameplay text for Impulse." ]
     },
     {
-      "identifier": "Impulse Card 1",
+      "identifier": "ImpulseCard1",
       "count": 10,
       "title": "Impulse Card 1",
       "keywords": [

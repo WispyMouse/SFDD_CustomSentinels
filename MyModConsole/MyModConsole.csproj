@@ -128,6 +128,10 @@
       <Project>{44f8c838-553c-482c-b389-2b375b8590c9}</Project>
       <Name>MyMod</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SFDD_CustomSentinels\SFDD_CustomSentinels.csproj">
+      <Project>{dfc4da22-4b3b-4206-81fb-ac1d2dae2a07}</Project>
+      <Name>SFDD_CustomSentinels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

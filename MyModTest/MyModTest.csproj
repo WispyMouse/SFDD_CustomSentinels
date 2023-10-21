@@ -114,6 +114,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImpulseTest.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="BaseTest.cs" />
     <Compile Include="Setup.cs" />
@@ -129,6 +130,10 @@
     <ProjectReference Include="..\MyMod\MyMod.csproj">
       <Project>{44F8C838-553C-482C-B389-2B375B8590C9}</Project>
       <Name>MyMod</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SFDD_CustomSentinels\SFDD_CustomSentinels.csproj">
+      <Project>{DFC4DA22-4B3B-4206-81FB-AC1D2DAE2A07}</Project>
+      <Name>SFDD_CustomSentinels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

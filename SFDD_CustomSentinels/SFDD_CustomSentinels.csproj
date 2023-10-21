@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EngineCommon, Version=1.0.8517.39435, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Sentinels of the Multiverse\Sentinels_Data\Managed\EngineCommon.dll</HintPath>
+    </Reference>
     <Reference Include="SentinelsEngine">
       <HintPath>..\MyModTest\bin\Debug\SentinelsEngine.dll</HintPath>
     </Reference>
@@ -44,12 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Impulse\ImpulseCard1CardController.cs" />
     <Compile Include="Impulse\ImpulseCharacterCardController.cs" />
+    <Compile Include="Impulse\ImpulseTurnTakerController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="DeckLists\ImpulseDeckList.json" />
+    <EmbeddedResource Include="DeckLists\ImpulseCharacterDeckList.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
