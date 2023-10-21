@@ -15,11 +15,10 @@
       "hitpointsColor": "C94742",
       "character": true,
       "powers": [
-        "Draw 2 cards."
+        "Play a track card, then return a track card to your hand."
       ],
       "icons": [
-        "HasPower",
-        "DrawCardNow"
+        "HasPower"
       ],
       "hitpoints": 30,
       "nemesisIdentifiers": [
@@ -27,13 +26,11 @@
       ],
       "incapacitatedAbilities": [
         "One player may play a card.",
-        "One hero may use a power.",
-        "One player may draw a card."
+        "One hero target may gain 2 HP now.",
+        "One villain target does -1 damage until your next turn."
       ],
       "flippedIcons": [
-        "PlayCardNow",
-        "UsePowerNow",
-        "DrawCardNow"
+        "PlayCardNow"
       ],
       "openingLines": {
       },
@@ -42,13 +39,176 @@
       "gameplay": [ "This is the gameplay text for Impulse." ]
     },
     {
-      "identifier": "ImpulseCard1",
-      "count": 10,
-      "title": "Impulse Card 1",
+      "identifier": "SFDDSerratedVinylSlash",
+      "count": 1,
+      "title": "Serrated Vinyl Slash",
       "keywords": [
         "one-shot"
       ],
-      "body": "Nothing happens.",
+      "body": "{SFDDImpulse} deals 1 target 3 projectile damage. If this destroys the target, Impulse deals 1 target 2 sonic damage.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDLightSmokeAndMirrors",
+      "count": 1,
+      "title": "Light, Smoke, and Mirrors",
+      "keywords": [
+        "one-shot"
+      ],
+      "body": "{SFDDImpulse} deals 1 villain target X damage, where X is the number of environment cards in play.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDRecordScratch",
+      "count": 1,
+      "title": "Record Scratch",
+      "keywords": [
+        "one-shot"
+      ],
+      "body": "{SFDDImpulse} deals up to X targets 2 sonic damage, where X is the number of tracks in your hand.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDBreakdown",
+      "count": 1,
+      "title": "Breakdown",
+      "keywords": [
+        "one-shot"
+      ],
+      "body": "Villain target deals 2 less damage until the start of {SFDDImpulse}'s next turn.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDDowntempoShift",
+      "count": 1,
+      "title": "Downtempo Shift",
+      "keywords": [
+        "one-shot"
+      ],
+      "body": "Target player may draw 2 cards and discard 1 card.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDAccousticDeadzone",
+      "count": 1,
+      "title": "Accoustic Deadzone",
+      "keywords": [
+        "ongoing"
+      ],
+      "body": "Attach to target. Attached card is exempt from all effects that target more than 1 card.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDPhaseModulator",
+      "count": 1,
+      "title": "Phase Modulator",
+      "keywords": [
+        "equipment",
+        "limited"
+      ],
+      "body": "At the start of the villain turn, choose a villain target with 4 HP or less to skip their turn.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDTripleDeckTurntable",
+      "count": 1,
+      "title": "Triple Deck Turntable",
+      "keywords": [
+        "equipment"
+      ],
+      "body": "Power: Play 2 track cards, then remove all track cards from play.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDSuperMaxHiFi",
+      "count": 1,
+      "title": "Super Max Hi-Fi",
+      "keywords": [
+        "equipment",
+        "limited"
+      ],
+      "body": "When {SFDDImpulse} deals Sonic damage, deal 1 additional target X sonic damage, where X is the number of track cards in your trash.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDSonicSoothe",
+      "count": 1,
+      "title": "Sonic Soothe",
+      "keywords": [
+        "ongoing",
+        "track"
+      ],
+      "body": "At the start of your turn, hero target heals 2 HP. If {SFDDImpulse} would take damage, discard this card instead.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDDancefloorDirge",
+      "count": 1,
+      "title": "Dancefloor Dirge",
+      "keywords": [
+        "ongoing",
+        "track"
+      ],
+      "body": "When this track enters play, draw a card. If that card is a one-shot, you may play it. At the start of your turn, {SFDDImpulse} may deal 1 target 2 melee damage.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDLimbicOverdrive",
+      "count": 1,
+      "title": "Limbic Overdrive",
+      "keywords": [
+        "ongoing",
+        "track"
+      ],
+      "body": "The first time a hero takes damage since the start of your turn, they may play a card. When this card leaves play, each hero may draw a card.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDBuldUptotheDrop",
+      "count": 1,
+      "title": "Buld Up to the Drop",
+      "keywords": [
+        "ongoing",
+        "track",
+        "limited"
+      ],
+      "body": "At the start of your turn, add 1 build up counter to this track. Whis card leaves play, l deal up to 3 targets X sonic damage, where X is the number of build up counters on this track.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDD200BeatdownsPerMinute",
+      "count": 1,
+      "title": "200 Beatdowns Per Minute",
+      "keywords": [
+        "ongoing",
+        "track"
+      ],
+      "body": "When this track enters play, Impulse deals each non-hero target 2 sonic damage. At the start of your turn, draw a card.",
+      "icons": [
+      ]
+    },
+    {
+      "identifier": "SFDDReverbDistortion",
+      "count": 1,
+      "title": "Reverb Distortion",
+      "keywords": [
+        "ongoing",
+        "track"
+      ],
+      "body": "When this card enters your hand, Impulse deals 1 non-Hero target 2 sonic damage. At the start of your turn, deal 1 sonic damage to 2 non-hero targets.",
       "icons": [
       ]
     }
