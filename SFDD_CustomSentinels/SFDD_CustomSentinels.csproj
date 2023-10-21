@@ -50,12 +50,12 @@
   <ItemGroup>
     <Compile Include="Impulse\ImpulseCard1CardController.cs" />
     <Compile Include="Impulse\ImpulseCharacterCardController.cs" />
-    <Compile Include="Impulse\ImpulseTurnTakerController.cs" />
+    <Compile Include="Impulse\SFDDImpulseTurnTakerController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="DeckLists\ImpulseCharacterDeckList.json" />
+    <EmbeddedResource Include="DeckLists\SFDDImpulseDeckList.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

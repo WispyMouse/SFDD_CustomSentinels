@@ -23,7 +23,7 @@
       ],
       "hitpoints": 30,
       "nemesisIdentifiers": [
-        "SFDD_CustomSentinels.ImpulseCharacter"
+        "SFDD_CustomSentinels.SFDDImpulse"
       ],
       "incapacitatedAbilities": [
         "One player may play a card.",

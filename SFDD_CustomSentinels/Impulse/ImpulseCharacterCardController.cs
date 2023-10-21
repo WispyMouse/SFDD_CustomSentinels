@@ -3,7 +3,7 @@ using Handelabra.Sentinels.Engine.Controller;
 using Handelabra.Sentinels.Engine.Model;
 using System.Collections;
 
-namespace SFDD_CustomSentinels.ImpulseCharacter
+namespace SFDD_CustomSentinels.SFDDImpulse
 {
     public class ImpulseCharacterCardController : HeroCharacterCardController
     {

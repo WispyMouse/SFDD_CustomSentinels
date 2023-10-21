@@ -14,12 +14,12 @@ namespace MyModTest
     [TestFixture()]
     public class ImpulseTest : BaseTest
     {
-        protected HeroTurnTakerController impulse { get { return FindHero("ImpulseCharacter"); } }
+        protected HeroTurnTakerController impulse { get { return FindHero("SFDDImpulse"); } }
 
         [Test()]
         public void CanInitialize()
         {
-            SetupGameController("BaronBlade", "SFDD_CustomSentinels.ImpulseCharacter", "Megalopolis");
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
 
             StartGame();
 

@@ -61,7 +61,7 @@ namespace Handelabra.MyModConsole // this has to be this way to work around an E
     {
         public static Dictionary<string, Assembly> ModAssemblies = new Dictionary<string, Assembly>
         {
-            { "SFDD_CustomSentinels", typeof(SFDD_CustomSentinels.ImpulseCharacter.ImpulseCharacterCardController).Assembly } // replace with your own namespace and type
+            { "SFDD_CustomSentinels", typeof(SFDD_CustomSentinels.SFDDImpulse.ImpulseCharacterCardController).Assembly } // replace with your own namespace and type
         };
 
         // LoadAllModContentOfKind() tries to guess the right identifiers - use this to override ones that don't fit
@@ -80,7 +80,7 @@ namespace Handelabra.MyModConsole // this has to be this way to work around an E
             Dictionary<string, string> promos = new Dictionary<string, string>();
 
             // Set up a game how you want, stack decks, etc.
-            game = new Game(new string[] { "BaronBlade", "ImpulseCharacter", "PikeIndustrialComplex" }, advanced, promos, isChallenge: challenge);
+            game = new Game(new string[] { "BaronBlade", "SFDDImpulse", "PikeIndustrialComplex" }, advanced, promos, isChallenge: challenge);
 
             return game;
         }
@@ -88,7 +88,7 @@ namespace Handelabra.MyModConsole // this has to be this way to work around an E
         private void ConfigurePostGameStartTesting()
         {
             // Do whatever you want after the game starts.
-            RunCoroutine(GameController.SetActiveTurnTaker("ImpulseCharacter"));
+            RunCoroutine(GameController.SetActiveTurnTaker("SFDDImpulse"));
         }
 
         private static void SetHitPoints(Game game, string identifier, int amount)

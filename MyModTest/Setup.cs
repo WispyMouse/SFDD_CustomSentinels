@@ -4,7 +4,7 @@ using System.Reflection;
 using Handelabra.Sentinels.Engine.Model;
 using Workshopping.MigrantCoder;
 using Handelabra;
-using SFDD_CustomSentinels.ImpulseCharacter;
+using SFDD_CustomSentinels.SFDDImpulse;
 
 namespace MyModTest
 {
