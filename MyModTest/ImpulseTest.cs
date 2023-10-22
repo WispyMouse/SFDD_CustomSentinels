@@ -47,6 +47,7 @@ namespace MyModTest
             // That card is in your hand
         }
 
+        // todo: Should have range of number of tracks in play
         [Test()]
         public void RemixAbility_TrackInPlay()
         {
@@ -121,6 +122,7 @@ namespace MyModTest
             // Observe its destruction
             // Select the second target
             // Observe its destruction
+            // Observe no third target
         }
 
         [Test()]
@@ -154,6 +156,7 @@ namespace MyModTest
             // Observe that this does no damage
         }
 
+        // todo: Range of number of environments
         [Test()]
         public void LightSmokeAndMirrors_OneEnvironment()
         {
@@ -167,21 +170,6 @@ namespace MyModTest
 
             // Select the villain
             // Observe that this does one damage
-        }
-
-        [Test()]
-        public void LightSmokeAndMirrors_RandomEnvironment()
-        {
-            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
-
-            // Create a random number of environment targets
-
-            StartGame();
-
-            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDLightSmokeAndMirrors");
-
-            // Select the villain
-            // Observe that this does the right damage damage
         }
 
         [Test()]
@@ -211,6 +199,7 @@ namespace MyModTest
             // Observe damage is done
         }
 
+        // todo random range of targets
         [Test()]
         public void RecordScratch_RandomTracks_EnoughTargets()
         {
@@ -282,41 +271,230 @@ namespace MyModTest
             // Observe that they are not exempt
         }
 
-        /*Phase Modulator
-Equipment - Limited
-At the start of the villain turn, choose a villain target with 4 HP or less to skip their turn.
+        [Test()]
+        public void PhaseModulator_NoTarget()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
 
-Triple Deck Turntable
-Equipment
-Power: Play 2 track cards, then remove all track cards from play.
+            StartGame();
 
-Super Max Hi-Fi
-Equipment - Limited
-When Impulse deals Sonic damage, deal 1 additional target X sonic damage, where x is the number of track cards in your trash.
-Sonic Soothe
-Ongoing - Track
-At the start of your turn, target hero heals 2 HP. If Impulse would take damage, discard this card instead.
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDPhaseModulator");
 
-Dancefloor Dirge
-Ongoing - Track
-When this track enters play, draw a card. If that card is a one-shot, you may play it.
-At the start of your turn, you may deal 1 target 2 melee damage.
+            // Go to villain turn
+            // There are no villain targets with 4 or less hp
+            // no crashing
+        }
 
-Limbic Overdrive
-Ongoing - Track
-The first time a hero takes damage since the start of your turn, they may play a card. When this card leaves play,e ach hero may draw a card.
+        // todo range of targets
+        [Test()]
+        public void PhaseModulator_Target()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
 
-Buld Up to the Drop
-Ongoing - Track - Limited
-At the start of your turn, add 1 build up counter to this track. Whis card leaves play,l deal up to 3 targets X sonic damage, where X is the number of build up counters on this track.
+            // Create a villain target with 4 hp
+            StartGame();
 
-200 Beatdowns Per Minute
-Ongoing - Track
-When this track enters play, Impulse deals each non-hero target 2 sonic damage. At the start of your turn, draw a card.
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDPTripleDeckTurnTable");
 
-Reverb Distortion
-Ongoing - Track
-When this card enters your hand, Impulse deals 1 non-Hero target 2 sonic damage. At the start of your turn, deal 1 sonic damage to 2 non-hero targets.
-         * */
+            // Go to villain turn
+            // There is a villain targets with 4 or less hp
+            // observe they skip their turn
+        }
+
+        // todo range of number of tracks in hand
+        [Test()]
+        public void TripleDeckTurnTable_Power()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            StartGame();
+
+            // Stack the deck so that two tracks are in hand
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDPTripleDeckTurnTable");
+
+            // Use the power
+            // Choose to play two tracks
+            // Observe they enter and trigger
+            // Observe that all tracks are trashed ???
+        }
+
+        // todo range of targets
+        // todo range of track cards in trash
+        [Test()]
+        public void SuperMaxHiFi_AugmentSonic()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            // fill trash with random number of track cards
+            // create a villain target
+            StartGame();
+
+            // Stack the deck so that two tracks are in hand
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDSuperMaxHiFi");
+
+            // Deal sonic damage some how
+            // Deal an additional target x sonic damage
+        }
+
+        // todo range of targets
+        // todo range of track cards in trash
+        [Test()]
+        public void SuperMaxHiFi_DoesNotAugmentNotSonic()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            // fill trash with random number of track cards
+            // create a villain target
+            StartGame();
+
+            // Stack the deck so that two tracks are in hand
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDSuperMaxHiFi");
+
+            // Deal not sonic damage some how
+            // Observe no additional damage
+        }
+
+        [Test()]
+        public void SonicSoothe_Heal()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            // fill trash with random number of track cards
+            // create a villain target
+            StartGame();
+
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDSonicSoothe");
+
+            // Wait until next start of turn
+            // Observe heal for target
+        }
+
+        [Test()]
+        public void SonicSoothe_DiscardDamageBlock()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            // fill trash with random number of track cards
+            // create a villain target
+            StartGame();
+
+            // Have Sonic Soothe in hand
+            // Take damage
+            // Observe no damage and discard
+        }
+
+        [Test()]
+        public void DancefloorDige_DrawOneShot()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            StartGame();
+
+            // Stack the deck so that a one-shot is on top
+
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDDancefloorDirge");
+
+            // Draw that card
+            // Observe it is a one-shot
+            // Play it
+        }
+
+        [Test()]
+        public void DancefloorDige_DrawNotOneShot()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            StartGame();
+
+            // Stack the deck so that a not-one-shot is on top
+
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDDancefloorDirge");
+
+            // Draw that card
+            // Observe it is a not a one-shot
+            // Can't play it
+        }
+
+        [Test()]
+        public void DancefloorDige_StartOfTurnMelee()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            StartGame();
+
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDDancefloorDirge");
+
+            // Wait until start of turn
+            // Deal damage
+        }
+
+        // todo random number of instances
+        [Test()]
+        public void LimbicOverdrive_HeroDamageOnce()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            StartGame();
+
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDLimbicOverdrive");
+
+            // Heroes take random damage some how
+            // Observe they may play a card
+            // Observe it happens only once per hero
+        }
+
+        [Test()]
+        public void LimbicOverdrive_LeavesPlayDraw()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            StartGame();
+
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDLimbicOverdrive");
+
+            // Remove the card some how
+            // Observe each player draws
+        }
+
+        // todo range of turns
+        // todo range of targets
+        [Test()]
+        public void BulidUpToTheDrop_WaitForTurnsAndDealDamage()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            StartGame();
+
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDBuildUpToTheDrop");
+
+            // Wait a number of turns
+            // Observe each turn a counter is placed
+            // Leave play some how
+            // Observe damage to targets based on counters
+        }
+
+        [Test()]
+        public void ReverbDistortion_EntersHandTrigger()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            StartGame();
+
+            // Draw the card
+            // Observe damage trigger
+        }
+
+        [Test()]
+        public void ReberbDistortion_StartOfTurnTrigger()
+        {
+            SetupGameController("BaronBlade", "SFDD_CustomSentinels.SFDDImpulse", "Megalopolis");
+
+            StartGame();
+
+            GoToPlayCardPhaseAndPlayCard(impulse, "SFDDReverbDistortion");
+
+            // Wait until next turn
+            // Observe damage
+        }
     }
 }
